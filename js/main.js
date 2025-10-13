@@ -1,15 +1,8 @@
 $(function() {
   $("#header").load("header.html", function() {
     $("#menu-btn").on("click", function() {
-      $("#menu-modal").fadeIn(200, function() {
-        $(this).addClass("show");
-      });
-    });
-
-    $("#close-btn").on("click", function(e) {
-      $("#menu-modal").fadeOut(200, function() {
-        $(this).removeClass("show");
-      });
+      $("#menu").toggleClass("show");   // メニューの表示/非表示切り替え
+      $(this).toggleClass("open");      // ボタンの見た目変える用（任意）
     });
   });
 
