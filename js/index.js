@@ -1,42 +1,12 @@
 $(function() {
-  let slideIndex = 0;
-  let slides = $(".slide");
-  let dots = $(".dot");
-  let timer;
+  let index = 0;
+  const images = document.querySelectorAll(".slideshow img");
 
-  function showSlide(index) {
-    slides.hide().removeClass("fade");
-    dots.removeClass("active");
+  images[index].classList.add("active");
 
-    slides.eq(index).show().addClass("fade");
-    dots.eq(index).addClass("active");
-
-    slideIndex = index;
-  }
-
-  function nextSlide() {
-    let nextIndex = (slideIndex + 1) % slides.length;
-    showSlide(nextIndex);
-  }
-
-  function startSlideShow() {
-    // 5秒ごとに切替
-    timer = setInterval(nextSlide, 5000);
-  }
-
-  function stopSlideShow() {
-    clearInterval(timer);
-  }
-
-  // 初期表示
-  showSlide(0);
-  startSlideShow();
-
-  // ドットクリック
-  dots.on("click", function() {
-    let index = $(this).data("index");
-    showSlide(index);
-    stopSlideShow();
-    startSlideShow(); // クリック後も自動再生を継続
-  });
+  setInterval(() => {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+  }, 5000);
 });

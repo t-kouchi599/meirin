@@ -237,6 +237,30 @@ footer {
     );
 }
 
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 500px; /* 好きな高さに調整 */
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: clip-path 2s ease, opacity 2s ease;
+  clip-path: inset(100% 0 0 0);  /* 最初は全部隠れてる（下から上へ） */
+}
+
+.slideshow img.active {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);      /* 下から徐々に表示 */
+}
+
 /* PC用レイアウト */
 @media (min-width: 768px) {
 
