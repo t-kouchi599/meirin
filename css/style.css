@@ -86,12 +86,13 @@ img {
 }
 
 .menu-table td::after {
-  content: "＞";              /* ＞マーク（矢印っぽいのも可） */
+  content: "＞";
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
+  font-weight: bold;
 }
 
 .modal-content ul li a {
