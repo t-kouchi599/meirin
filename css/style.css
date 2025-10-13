@@ -1,3 +1,7 @@
+:root {
+  --main-color: #11b619;
+}
+
 /* リセット（ブラウザ差異を減らすための簡易版） */
 * {
     margin: 0;
@@ -18,9 +22,9 @@ header {
     align-items: center;
     padding: 1rem;
     background: white;
-    color: green;
+    color: var(--main-color);
     position: sticky;
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid var(--main-color);
     top: 0;
     z-index: 1000;
 }
@@ -140,7 +144,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #333;
+    background: var(--main-color);
     z-index: 999;
 }
 
@@ -152,6 +156,7 @@ footer {
     border: 1px solid white;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .footer-menu span {
@@ -164,7 +169,7 @@ footer {
 }
 
 .contact-box {
-    border: 2px solid green;   /* 枠線 */
+    border: 2px solid var(--main-color);   /* 枠線 */
     border-radius: 12px;      /* 角を丸める（pxを大きくすると丸みが増す） */
     padding: 20px;            /* 内側の余白 */
     background: #E0F8E0;
@@ -174,7 +179,7 @@ footer {
 }
 
 .heading {
-    border: 2px solid green;   /* 枠線 */
+    border: 2px solid var(--main-color);   /* 枠線 */
     border-radius: 12px;      /* 角を丸める（pxを大きくすると丸みが増す） */
     padding: 5px 20px;            /* 内側の余白 */
     background: linear-gradient(135deg, #E0F8E0, #f8fff8);
@@ -189,7 +194,7 @@ footer {
     right: 10px;           /* 画面の右からの距離 */
     width: 50px;
     height: 50px;
-    background: #333;      /* 背景色 */
+    background: var(--main-color);      /* 背景色 */
     color: #fff;           /* 文字色 */
     border-radius: 50%;    /* 丸くする */
     display: flex;
@@ -198,13 +203,22 @@ footer {
     text-decoration: none;
     font-size: 20px;
     transition: opacity 0.3s;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 6px -2px rgba(0,0,0,0.6);
+    border: 1.5px solid green;
+}
+
+.scroll-top-arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: translateY(20%) rotate(-45deg);
 }
 
 .fade-up {
     opacity: 0;
     transform: translateY(30px);       /* 下にずらしておく */
-    transition: all 1s ease;           /* アニメーション */
+    transition: all 2.5s ease;           /* アニメーション */
 }
 
 .fade-up.show {
