@@ -276,7 +276,7 @@ footer {
 .slideshow {
   position: relative;
   width: 100%;
-  height: 700px; /* 好きな高さに調整 */
+  height: 650px; /* 好きな高さに調整 */
   overflow: hidden;
 }
 
