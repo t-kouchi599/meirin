@@ -288,13 +288,13 @@ footer {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: clip-path 2s ease, opacity 2s ease;
-  clip-path: inset(100% 0 0 0);  /* 最初は全部隠れてる（下から上へ） */
+  transform: scale(1.2); /* 最初は拡大しておく */
+  transition: opacity 4s ease, transform 5s ease;
 }
 
 .slideshow img.active {
   opacity: 1;
-  clip-path: inset(0 0 0 0);      /* 下から徐々に表示 */
+  transform: scale(1); /* 徐々に縮小してズームアウト */
 }
 
 /* PC用レイアウト */

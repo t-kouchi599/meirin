@@ -1,12 +1,14 @@
-$(function() {
+$(function () {
   let index = 0;
-  const images = document.querySelectorAll(".slideshow img");
-
-  images[index].classList.add("active");
+  const $images = $(".slideshow img");
+  $images.eq(index).addClass("active");
 
   setInterval(() => {
-    images[index].classList.remove("active");
-    index = (index + 1) % images.length;
-    images[index].classList.add("active");
-  }, 5000);
+    // 今の画像を消す
+    $images.eq(index).removeClass("active");
+
+    // 次の画像へ
+    index = (index + 1) % $images.length;
+    $images.eq(index).addClass("active");
+  }, 5000); // 5秒ごとに切り替え
 });
