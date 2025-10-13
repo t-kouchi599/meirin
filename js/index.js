@@ -20,7 +20,7 @@ $(function() {
   }
 
   function startSlideShow() {
-    timer = setInterval(nextSlide, 3000); // 3秒ごとに切替
+    timer = setInterval(nextSlide, 5000); // 3秒ごとに切替
   }
 
   function stopSlideShow() {
