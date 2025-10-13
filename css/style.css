@@ -75,12 +75,23 @@ img {
   border: 2px solid var(--main-color);   /* 枠線をつける */
   padding: 10px;
   text-align: left;
+  background-color: #E0F8E0;
+  position: relative;
 }
 
 .menu-table a {
   text-decoration: none;
   color: #333;
   display: block;
+}
+
+.menu-table td::after {
+  content: "＞";              /* ＞マーク（矢印っぽいのも可） */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
 }
 
 .modal-content ul li a {
