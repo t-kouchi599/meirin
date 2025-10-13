@@ -1,0 +1,229 @@
+/* リセット（ブラウザ差異を減らすための簡易版） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background: #fafafa;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    color: green;
+    position: sticky;
+    border-bottom: 1px solid green;
+    top: 0;
+    z-index: 1000;
+}
+
+img {
+    max-width: 100%;  /* 親要素の幅に合わせて縮小 */
+    height: auto;     /* アスペクト比を維持 */
+}
+
+.modal {
+    display: none; /* 初期は非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+/* モーダル本体（上からスライド・全画面表示） */
+.modal-content {
+    position: relative;
+    top: -100%;      /* 初期は画面の上に隠す */
+    left: 0;
+    width: 100%;     /* 全画面幅 */
+    height: 100%;    /* 全画面高さ */
+    background: #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: top 0.3s ease; /* 上からスライドするアニメーション */
+    overflow-y: auto;          /* コンテンツが多い場合スクロール */
+}
+
+.modal-content ul {
+    list-style: none;   /* 黒丸を消す */
+    margin: 60px 0 0;   /* 上に余白をとる（×ボタンとかぶらないように） */
+    padding: 0;
+    text-align: center; /* 中央寄せ */
+}
+
+.modal-content ul li {
+  margin: 20px 0;     /* メニュー間に余白 */
+}
+
+.modal-content ul li a {
+    display: block;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.modal-content ul li a:hover {
+    color: #007BFF;     /* ホバー時に青く */
+}
+
+.modal.show .modal-content {
+    top: 0;
+}
+
+.close-btn {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.header-btn {
+    margin-bottom: -8px;
+}
+
+.menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+main {
+    padding: 2rem 1rem;
+    margin-bottom: 40px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;   /* 均等配置 */
+    align-items: center;
+    position: fixed;                 /* 画面下に固定 */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    z-index: 999;
+}
+
+.footer-menu {
+    flex: 1;                         /* 横幅を均等にする */
+    text-align: center;
+    padding: 0.6rem 0;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-menu span {
+    display: block;
+    font-size: 0.75rem;              /* アイコン下に小さく文字 */
+}
+
+.footer-menu:hover {
+    background: #444;
+}
+
+.contact-box {
+    border: 2px solid green;   /* 枠線 */
+    border-radius: 12px;      /* 角を丸める（pxを大きくすると丸みが増す） */
+    padding: 20px;            /* 内側の余白 */
+    background: #E0F8E0;
+    max-width: 90%;
+    margin: 0px auto 20px;        /* 中央寄せ */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ほんのり影（オシャレ感） */
+}
+
+.heading {
+    border: 2px solid green;   /* 枠線 */
+    border-radius: 12px;      /* 角を丸める（pxを大きくすると丸みが増す） */
+    padding: 5px 20px;            /* 内側の余白 */
+    background: linear-gradient(135deg, #E0F8E0, #f8fff8);
+    max-width: 100%;
+    margin: 0px auto 20px;        /* 中央寄せ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 75px;          /* 画面の下からの距離 */
+    right: 10px;           /* 画面の右からの距離 */
+    width: 50px;
+    height: 50px;
+    background: #333;      /* 背景色 */
+    color: #fff;           /* 文字色 */
+    border-radius: 50%;    /* 丸くする */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: opacity 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);       /* 下にずらしておく */
+    transition: all 1s ease;           /* アニメーション */
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.diagonal-bg {
+    width: 100%;
+    background: repeating-linear-gradient(
+        -45deg,              /* 45度の斜め */
+        #edfaee,            /* 緑 */
+        #f5faf5 50px,       /* 緑の幅 */
+        #ffffff 100px,       /* 白の開始 */
+        #ffffff 70px        /* 白の幅 */
+    );
+}
+
+/* PC用レイアウト */
+@media (min-width: 768px) {
+
+}

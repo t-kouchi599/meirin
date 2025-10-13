@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品一覧</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/item.css">
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main>
+    <div id="item" class="item-list">
+      <h2>商品一覧</h2>
+
+      <div class="item" data-images='["images/moka1.jpg","images/moka2.jpg","images/moka3.jpg"]'>
+        <img src="images/moka1.jpg" alt="商品1">
+        <div class="info">
+          <h3>モカ（チワワ）</h3>
+          <p>第一号。おとなしくて可愛い。寝るときはくっついてくる。</p>
+          <p class="price">¥210,000</p>
+        </div>
+      </div>
+
+      <div class="item" data-images='["images/chako1.jpg"]'>
+        <img src="images/chako1.jpg" alt="商品2">
+        <div class="info">
+          <h3>チャコ（パピヨン）</h3>
+          <p>第二号。うるさい。</p>
+          <p class="price">¥5,000</p>
+        </div>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+  </main>
+
+  <div id="gallery-modal" class="gallery-modal">
+    <span class="gallery-close">&times;</span>
+    <div class="gallery-inner">
+      <img class="gallery-img" id="gallery-img">
+      <div class="gallery-nav prev">&#10094;</div>
+      <div class="gallery-nav next">&#10095;</div>
+    </div>
+  </div>
+
+  <a href="#" class="scroll-top">↑</a>
+  <div id="footer-menu"></div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/item.js"></script>
+  
+</body>
+</html>
