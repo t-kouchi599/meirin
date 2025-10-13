@@ -1,8 +1,24 @@
 $(function() {
   $("#header").load("header.html", function() {
-    $("#menu-btn").on("click", function() {
-      $("#menu").toggleClass("show");   // メニューの表示/非表示切り替え
-      $(this).toggleClass("open");      // ボタンの見た目変える用（任意）
+    $("#menu-btn").on("click", function () {
+      const $btn = $(this);
+      const $menu = $("#menu");
+
+      $btn.toggleClass("open");
+      $menu.toggleClass("show");
+
+      if ($menu.hasClass("show")) {
+        $("body").css("overflow", "hidden");   // スクロール禁止
+      } else {
+        $("body").css("overflow", "auto");     // スクロール解除
+      }
+    });
+
+    // メニュー内リンクを押したら閉じる
+    $("#menu a").on("click", function () {
+      $("#menu").removeClass("show");
+      $("#menu-btn").removeClass("open");
+      $("body").css("overflow", "auto");       // スクロール解除
     });
   });
 

@@ -16,6 +16,10 @@ body {
     color: #333;
 }
 
+main {
+    margin-top: 60px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
