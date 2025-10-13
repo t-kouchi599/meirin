@@ -127,7 +127,8 @@ img {
 }
 
 .header-btn {
-    margin-bottom: -8px;
+    margin-bottom: -2px;
+    margin-left: auto;
 }
 
 .menu-btn {
