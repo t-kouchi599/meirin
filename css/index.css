@@ -30,7 +30,7 @@ body { margin: 0; }
     white-space: nowrap; /* 1行表示（改行させたいなら削除） */
     background: rgba(40, 63, 50, 0.548);
     color: rgb(106, 243, 151);
-    -webkit-text-stroke: 0.5px rgb(38, 104, 38);
+    -webkit-text-stroke: 1px #3ca1c9;
 }
 
 /* ドット（ページ送り） */
