@@ -245,7 +245,7 @@ footer {
     background-size: contain;                  /* 画像を枠内に収める */
     background-repeat: no-repeat;
     margin-right: 5px;                         /* 文字との間隔 */
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     vertical-align: middle;                    /* 文字と縦位置を揃える */
 }
 
