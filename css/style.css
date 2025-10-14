@@ -402,45 +402,55 @@ footer {
 }
 
 .common-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #38adf1, #adc7e9); /* グラデーション */
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 50px;      /* 丸み強調でかわいさUP */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* 影で浮かせる */
-  transition: all 0.3s ease;
-  margin: 20px auto;
-  border: 1.5px solid rgb(63, 63, 240);
+    display: inline-block;
+    background: linear-gradient(135deg, #00AEEF, #afd2ff); /* グラデーション */
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;      /* 丸み強調でかわいさUP */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* 影で浮かせる */
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    border: 1.5px solid rgb(63, 63, 240);
 }
 
 .common-btn:hover {
-  transform: translateY(-4px) scale(1.03);  /* 浮いて少し拡大 */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    transform: translateY(-4px) scale(1.03);  /* 浮いて少し拡大 */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .common-btn-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;           /* 丸のサイズ */
-  height: 26px;
-  margin-left: 12px;
-  color: white;        /* 矢印の色（ボタンと調和） */
-  border-radius: 50%;    /* 完全な円にする */
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  border: 1.5px solid white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;           /* 丸のサイズ */
+    height: 26px;
+    margin-left: 12px;
+    color: white;        /* 矢印の色（ボタンと調和） */
+    border-radius: 50%;    /* 完全な円にする */
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1.5px solid white;
+
+    /* アニメーション追加 */
+    animation: arrowMove 1s infinite ease-in-out;
+}
+
+/* アニメーション定義 */
+@keyframes arrowMove {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
 }
 
 .common-btn-arrow:hover {
-  margin-left: 18px;     /* ホバーでスライド */
-  background: #fff;      /* 丸は白のまま */
-  color: #2a8ed1;        /* 矢印だけ濃く */
+    margin-left: 18px;     /* ホバーでスライド */
+    background: #fff;      /* 丸は白のまま */
+    color: #2a8ed1;        /* 矢印だけ濃く */
 }
 
 /* PC用レイアウト */
