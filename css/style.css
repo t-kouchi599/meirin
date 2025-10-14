@@ -386,7 +386,6 @@ footer {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     text-align: center;
     padding: 15px;
-    transition: transform 0.2s ease;
     color: #333;
     text-decoration: none;
 }
@@ -455,5 +454,10 @@ footer {
 
 /* PC用レイアウト */
 @media (min-width: 768px) {
-
+    .services {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 2列 */
+        gap: 15px; /* カード間の余白 */
+        padding: 10px;
+    }
 }
