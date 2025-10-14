@@ -355,9 +355,9 @@ footer {
 }
 
 .company-table th {
-    width: 120px;                /* 見出し列の幅 */
+    width: 100px;                /* 見出し列の幅 */
     background: #E0F8E0;
-    text-align: left;            /* 左寄せ */
+    text-align: center;
 }
 
 
