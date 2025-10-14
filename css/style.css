@@ -261,6 +261,17 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+.heading-sub {
+    border: 2px solid blue;
+    border-left: none;
+    border-radius: 0px 12px 12px 0px;
+    padding: 5px 20px;
+    background: linear-gradient(135deg, #a8e3f5, #dff1f3);
+    width: calc(100% + 16px); 
+    margin: 0 0 0px -20px;           /* 左右autoを消す */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 .scroll-top {
     position: fixed;
     bottom: 75px;          /* 画面の下からの距離 */
