@@ -230,12 +230,33 @@ footer {
 }
 
 .heading {
-    border: 2px solid var(--main-color);   /* 枠線 */
-    border-radius: 12px;      /* 角を丸める（pxを大きくすると丸みが増す） */
-    padding: 5px 20px;            /* 内側の余白 */
-    background: linear-gradient(135deg, #E0F8E0, #f8fff8);
+    border-bottom: 2px solid var(--main-color);   /* 枠線 */
+    padding: 5px 7px;            /* 内側の余白 */
     max-width: 100%;
     margin: 0px auto 20px;        /* 中央寄せ */
+}
+
+.heading::before {
+    content: "";                               /* 疑似要素を出す */
+    display: inline-block;                     /* インライン要素として表示 */
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/Meirin-logo3.png");
+    background-size: contain;                  /* 画像を枠内に収める */
+    background-repeat: no-repeat;
+    margin-right: 5px;                         /* 文字との間隔 */
+    margin-bottom: 5px;
+    vertical-align: middle;                    /* 文字と縦位置を揃える */
+}
+
+.heading-main {
+    border: 2px solid var(--main-color);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 5px 20px;
+    background: linear-gradient(135deg, #E0F8E0, #f8fff8);
+    width: calc(100% + 16px); 
+    margin: 0 0 20px 0px;           /* 左右autoを消す */
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
