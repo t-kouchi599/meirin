@@ -262,11 +262,11 @@ footer {
 }
 
 .heading-sub {
-    border: 2px solid blue;
+    border: 2px solid rgb(174, 185, 9);
     border-left: none;
     border-radius: 0px 12px 12px 0px;
     padding: 5px 20px;
-    background: linear-gradient(135deg, #a8e3f5, #dff1f3);
+    background: linear-gradient(135deg, #f0f795, #f0f1e1);
     width: calc(100% + 16px); 
     margin: 0 0 0px -20px;           /* 左右autoを消す */
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
