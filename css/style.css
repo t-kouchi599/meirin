@@ -342,6 +342,25 @@ footer {
   }
 }
 
+.company-table {
+    border-collapse: collapse;   /* 枠線を重ねない */
+    width: 100%;                 /* 横幅いっぱい */
+    margin-bottom: 20px;
+}
+
+.company-table th,
+.company-table td {
+    border: 1px solid #333;      /* 枠線 */
+    padding: 8px 12px;           /* 内側余白 */
+}
+
+.company-table th {
+    width: 120px;                /* 見出し列の幅 */
+    background: #E0F8E0;
+    text-align: left;            /* 左寄せ */
+}
+
+
 /* PC用レイアウト */
 @media (min-width: 768px) {
 
