@@ -37,8 +37,8 @@ $(function() {
         const scroll = $(window).scrollTop();     // スクロール量
         const windowHeight = $(window).height();  // ウィンドウ高さ
 
-        // 画面の下から10%見えたら発火
-        if (scroll > elemTop - windowHeight * 0.9) {
+        // 画面の下から20%見えたら発火
+        if (scroll > elemTop - windowHeight * 0.8) {
           $(this).addClass("show");
         }
       });
