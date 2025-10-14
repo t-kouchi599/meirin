@@ -19,7 +19,7 @@ body { margin: 0; }
 
 .caption {
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 50%;           /* 横中央 */
     transform: translateX(-50%);
     padding: 10px 20px;
