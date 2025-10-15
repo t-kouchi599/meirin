@@ -8,14 +8,15 @@
   background-size: cover;
   overflow: hidden;
   position: fixed;   /* または absolute */
-  background: url("../images/stars-night-small.jpg") no-repeat center center;
+  /* background: url("../images/stars-night-small.jpg") no-repeat center center; */
+  background-color: white;
   background-size: cover;
   background-attachment: scroll;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;    /* 数値が大きいほど前面に表示される */
+  z-index: 100;
 }
 
 #shooting-stars {
