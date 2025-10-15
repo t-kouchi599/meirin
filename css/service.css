@@ -4,7 +4,7 @@
   background-size: cover;
   overflow: hidden;
   position: fixed;   /* または absolute */
-  background: url("../images/stars-night.png") no-repeat center center fixed;
+  background: url("../images/stars-night.jpg") no-repeat center center fixed;
   top: 0;
   left: 0;
   width: 100%;
