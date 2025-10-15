@@ -10,7 +10,6 @@
   position: fixed;   /* または absolute */
   background: url("../images/stars-night-small.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: scroll;
   top: 0;
   left: 0;
   width: 100%;
