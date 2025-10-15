@@ -3,17 +3,23 @@ body { margin: 0; }
 
 #loading {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background: #ccf5d1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;   /* 左右中央 */
+  align-items: center;       /* 上下中央 */
   z-index: 9999;
 }
 
-/* 内部を縦並びにするコンテナ */
+/* ローディングロゴ (中央配置) */
 .loading-box {
+  position: absolute;
+  top: 55%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* 上下左右中央 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +33,34 @@ body { margin: 0; }
   color: #333; /* 好みで調整 */
   font-family: "Noto Serif JP", serif;
 }
+
+
+/* 企業ロゴ (画面下に固定) */
+.loading-brand {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;             /* 幅を強制的に全体に広げる */
+  max-width: 300px;        /* ロゴ全体の最大幅を決めておくと安心 */
+  box-sizing: border-box;
+}
+
+.brand-img {
+  max-width: 40%;          /* 画像が大きすぎないように調整 */
+  height: auto;
+}
+
+.brand-and {
+  color: black;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
 
 .slideshow-container {
     max-width: 600px;
