@@ -43,7 +43,7 @@ $(function() {
   });
 
   // 閉じる
-  $(".gallery-close-top").on("click", function() {
+  $(".gallery-close-top, .gallery-close-bottom").on("click", function() {
     $(".gallery-modal").fadeOut();
   });
 
