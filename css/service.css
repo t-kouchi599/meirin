@@ -8,7 +8,9 @@
   background-size: cover;
   overflow: hidden;
   position: fixed;   /* または absolute */
-  background: url("../images/stars-night-small.jpg") no-repeat center center fixed;
+  background: url("../images/stars-night-small.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
   background-size: 100% 100%;
   top: 0;
   left: 0;
