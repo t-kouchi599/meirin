@@ -1,3 +1,7 @@
+$(window).on("load", function() {
+  $("#loading").fadeOut(2000);
+});
+
 $(function () {
   let index = 0;
   const $images = $(".slideshow img");
