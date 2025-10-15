@@ -64,7 +64,7 @@
   z-index: 3000;
 }
 
-.gallery-close {
+.gallery-close-top {
   position: absolute;
   top: -5px;
   right: 15px;
@@ -72,6 +72,22 @@
   font-size: 40px;
   cursor: pointer;
   z-index: 9901;
+}
+
+.gallery-close-bottom {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #bbbbbb;
+  color: black;
+  width: 90%;
+  text-align: center;
+  z-index: 9901;
+  border-radius: 20px;
 }
 
 .gallery-nav {
