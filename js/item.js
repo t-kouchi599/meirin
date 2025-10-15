@@ -27,6 +27,7 @@ $(function() {
   // 表示切り替え
   function showGalleryImage() {
     $("#gallery-img").attr("src", currentImages[currentIndex]);
+    updateDots();
   }
 
   // 前へ
@@ -42,15 +43,50 @@ $(function() {
   });
 
   // 閉じる
-  $(".gallery-modal .gallery-close").on("click", function() {
+  $(".gallery-close").on("click", function() {
     $(".gallery-modal").fadeOut();
   });
 
-  // 背景クリックで閉じる
-  $("#gallery-modal").on("click", function(e) {
-    if ($(e.target).is("#gallery-modal")) {
-      $(this).fadeOut();
+  let startX = 0;
+  let endX = 0;
+
+  $("#gallery-modal").on("touchstart", function(e) {
+      startX = e.originalEvent.touches[0].clientX;
+  });
+
+  $("#gallery-modal").on("touchend", function(e) {
+    endX = e.originalEvent.changedTouches[0].clientX;
+
+    let diffX = endX - startX;
+
+    // 右にスワイプしたとき（閾値30pxくらい）
+    if (diffX > 30) {
+      // 「前へ」と同じ処理
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      showGalleryImage();
+    }
+
+    // 左にスワイプしたとき（逆方向）
+    if (diffX < -30) {
+      // 「次へ」と同じ処理
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      showGalleryImage();
     }
   });
+
+  function updateDots() {
+    let html = "";
+    for (let i = 0; i < currentImages.length; i++) {
+      html += `<span class="${i === currentIndex ? 'active' : ''}" data-index="${i}"></span>`;
+    }
+    $("#gallery-dots").html(html);
+  }
+
+  $(document).on("click", "#gallery-dots span", function() {
+    currentIndex = $(this).data("index");
+    showGalleryImage();
+    updateDots();
+  });
+
 });
 

@@ -71,7 +71,7 @@
   color: #fff;
   font-size: 40px;
   cursor: pointer;
-  z-index: 3000;
+  z-index: 9901;
 }
 
 .gallery-nav {
@@ -87,3 +87,26 @@
 
 .gallery-nav.prev { left: 20px; }
 .gallery-nav.next { right: 20px; }
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* 横中央 */
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dots span.active {
+  background: #fff; /* アクティブ時の色 */
+}
