@@ -1,12 +1,21 @@
 $(window).on("load", function() {
-  $(".brand-left").addClass("animate");
-  $(".brand-right").addClass("animate");
+  // sessionStorageで初回判定
+  if (!sessionStorage.getItem("firstLoadDone")) {
+    // 初回だけアニメーション実行
+    $(".brand-left").addClass("animate");
+    $(".brand-right").addClass("animate");
 
-  setTimeout(function() {
-    $("#loading").fadeOut(2000);
-  }, 2300);
+    setTimeout(function() {
+      $("#loading").fadeOut(2000);
+    }, 2300);
+
+    // フラグを保存（同じタブ内の再読み込みではスキップされる）
+    sessionStorage.setItem("firstLoadDone", "true");
+  } else {
+    // 2回目以降はすぐ非表示
+    $("#loading").hide();
+  }
 });
-
 
 $(function () {
   let index = 0;
