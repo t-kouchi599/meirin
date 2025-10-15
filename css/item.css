@@ -43,7 +43,7 @@
 .gallery-modal {
   display: none;
   position: fixed;
-  z-index: 5000;
+  z-index: 9900;
   left: 0;
   top: 0;
   width: 100%;
@@ -59,15 +59,15 @@
 .gallery-img {
   max-width: 90%;
   max-height: 80vh;
-  margin-top: 40px;
+  margin-top: 60px;
   border-radius: 6px;
   z-index: 3000;
 }
 
 .gallery-close {
   position: absolute;
-  top: -10px;
-  right: 10px;
+  top: -5px;
+  right: 15px;
   color: #fff;
   font-size: 40px;
   cursor: pointer;
