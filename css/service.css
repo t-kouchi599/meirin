@@ -8,8 +8,7 @@
   background-size: cover;
   overflow: hidden;
   position: fixed;   /* または absolute */
-  /* background: url("../images/stars-night-small.jpg") no-repeat center center; */
-  background-color: white;
+  background: url("../images/stars-night-small.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
   top: 0;
@@ -49,12 +48,5 @@
   }
   50% {
     transform: translateY(-5px);
-  }
-}
-
-@media (min-width: 600px),
-       (min-height: 700px) {
-  .service-modal {
-    background: url("../images/stars-night-big.jpg") no-repeat center center fixed;
   }
 }
