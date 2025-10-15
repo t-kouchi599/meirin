@@ -1,7 +1,20 @@
 $(function () {
+  init();
   star();
 });
 
+function init() {
+  if (window.location.hash) {
+    $(".service-modal").hide();
+    $("html, body").scrollTop(target.offset().top - 60);
+  }
+}
+
+$('.service-card').click(function () {
+  $(".service-modal").hide();
+});
+
+// 星の描画処理
 function star() {
   const $canvas = $("#shooting-stars");
   const canvas = $canvas[0];

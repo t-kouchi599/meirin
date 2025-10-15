@@ -1,3 +1,7 @@
+.scroll-target {
+  scroll-margin-top: 70px;
+}
+
 .service-modal {
   margin-top: 60px;
   padding: 0;
@@ -33,8 +37,7 @@
 }
 
 .service-card {
-  color: #333;
-  background: url("../images/cloud.png") no-repeat center/contain;
+  background-color: rgba(255, 255, 255, 0.85);
   animation: floatCloud 3s ease-in-out infinite;
 }
 
