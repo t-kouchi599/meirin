@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meirin</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/service.css">
 </head>
 
 <body>
   <div id="header"></div>
 
   <main>
-    ※工事中
+    <div class="service-modal">
+      <!-- 背景（流星群） -->
+      <canvas id="shooting-stars"></canvas>
+
+      <!-- モーダルの中身 -->
+      <div class="modal-content">
+        <h2>サービス内容</h2>
+        <p>ここに説明が入ります。</p>
+      </div>
+    </div>
+
+
     <div id="footer"></div>
   </main>
 
@@ -21,7 +32,7 @@
 
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/service.js"></script>
 
 </body>
 </html>

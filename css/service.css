@@ -1,0 +1,28 @@
+.service-modal {
+  margin-top: 60px;
+  padding: 0;
+  background-size: cover;
+  overflow: hidden;
+  position: fixed;   /* または absolute */
+  background: url("../images/stars-night.png") no-repeat center center fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 500;    /* 数値が大きいほど前面に表示される */
+}
+
+#shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* クリックを邪魔しない */
+}
+
+@media (min-width: 1400px) {
+  .service-modal {
+    background-size: 100% 100%;
+  }
+}
