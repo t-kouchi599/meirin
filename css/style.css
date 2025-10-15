@@ -377,7 +377,6 @@ footer {
 
 .services {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列 */
     gap: 15px; /* カード間の余白 */
     padding: 10px;
 }
@@ -454,12 +453,16 @@ footer {
     color: #2a8ed1;        /* 矢印だけ濃く */
 }
 
+/* タブレット用レイアウト */
+@media (min-width: 600px) {
+
+}
+
 /* PC用レイアウト */
-@media (min-width: 768px) {
-    .services {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr); /* 2列 */
-        gap: 15px; /* カード間の余白 */
-        padding: 10px;
-    }
+@media (min-width: 1000px) {
+
+}
+
+@media (min-width: 1200px) {
+
 }

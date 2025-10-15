@@ -31,17 +31,36 @@ $(function() {
   });
 
   // スクロール時・ロード時に判定
-    $(window).on("scroll load", function() {
-      $(".fade-up").each(function() {
-        const elemTop = $(this).offset().top;     // 要素の位置
-        const scroll = $(window).scrollTop();     // スクロール量
-        const windowHeight = $(window).height();  // ウィンドウ高さ
+  $(window).on("scroll load", function() {
+    $(".fade-up").each(function() {
+      const elemTop = $(this).offset().top;     // 要素の位置
+      const scroll = $(window).scrollTop();     // スクロール量
+      const windowHeight = $(window).height();  // ウィンドウ高さ
 
-        // 画面の下から20%見えたら発火
-        if (scroll > elemTop - windowHeight * 0.8) {
-          $(this).addClass("show");
-        }
-      });
+      // 画面の下から20%見えたら発火
+      if (scroll > elemTop - windowHeight * 0.8) {
+        $(this).addClass("show");
+      }
     });
+  });
+
+  // 横幅に応じてカード数を決定する
+  function setGridColumns() {
+    var width = $(window).width();
+    var columns = 2; // 600pxまでは2列固定
+
+    if (width > 600) {
+      columns += Math.floor((width - 600) / 200) + 1;
+    }
+
+    $(".services").css("grid-template-columns", "repeat(" + columns + ", 1fr)");
+  }
+
+  setGridColumns();
+
+  // ウィンドウサイズ変更時にも実行
+  $(window).resize(function() {
+    setGridColumns();
+  });
 });
 
