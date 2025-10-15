@@ -1,6 +1,9 @@
 $(window).on("load", function() {
-  $("#loading").fadeOut(3000);
+  setTimeout(function() {
+    $("#loading").fadeOut(1500); // 3秒かけて消える
+  }, 1500); // 1秒待ってから開始
 });
+
 
 $(function () {
   let index = 0;
