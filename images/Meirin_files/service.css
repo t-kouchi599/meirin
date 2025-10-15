@@ -5,7 +5,6 @@
   overflow: hidden;
   position: fixed;   /* または absolute */
   background: url("../images/stars-night.jpg") no-repeat center center fixed;
-  background-size: 100% 100%;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,5 +22,7 @@
 }
 
 @media (min-width: 1400px) {
-
+  .service-modal {
+    background-size: 100% 100%;
+  }
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:5500/service.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meirin</title>
+  <link rel="stylesheet" href="./Meirin_files/style.css">
+  <link rel="stylesheet" href="./Meirin_files/service.css">
+</head>
+
+<body>
+  <div id="header"><header>
+  <a href="http://127.0.0.1:5500/index.html" class="logo">
+    <img src="./Meirin_files/Meirin-logo3.png" width="35px" style="margin-bottom: -10px;">
+    <img src="./Meirin_files/meirin.jpg" style="height: 20px; width: auto; margin-bottom: -2px;">
+    <span style="color: black; font-family: &#39;Playfair Display&#39;, serif;">&amp;</span>
+    <img src="./Meirin_files/officeK.png" style="height: 20px; width: auto; margin-bottom: -2px;">
+  </a>
+
+  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="header-btn">
+    <img src="./Meirin_files/instagram.jpg" width="38px" alt="instagram">
+  </a>
+
+  <button class="menu-btn" id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div class="modal-content" id="menu">
+  <table class="menu-table">
+    <tbody><tr><td><a href="http://127.0.0.1:5500/index.html">ホーム</a></td></tr>
+    <tr><td><a href="http://127.0.0.1:5500/service.html">サービス</a></td></tr>
+    <tr><td><a href="http://127.0.0.1:5500/item.html">商品一覧</a></td></tr>
+    <tr><td><a href="http://127.0.0.1:5500/company.html">会社情報</a></td></tr>
+    <tr><td><a href="http://127.0.0.1:5500/contact.html">お問い合わせ</a></td></tr>
+  </tbody></table>
+</div></div>
+
+  <main>
+    <div class="service-modal">
+      <!-- 背景（流星群） -->
+      <canvas id="shooting-stars" width="403" height="800"></canvas>
+
+      <!-- モーダルの中身 -->
+      <div class="modal-content">
+        <h2>サービス内容</h2>
+        <p>ここに説明が入ります。</p>
+      </div>
+    </div>
+  
+
+
+    <div id="footer"><footer>
+    <p>© 2025 Meirin | officeK</p>
+</footer></div>
+  </main>
+
+  <a href="http://127.0.0.1:5500/service.html#" class="scroll-top"><div class="scroll-top-arrow"></div></a>
+  <div id="footer-menu"><nav class="footer-nav">
+  <a href="http://127.0.0.1:5500/index.html" class="footer-menu">🏠<span>ホーム</span></a>
+  <a href="http://127.0.0.1:5500/service.html" class="footer-menu">💼<span>サービス</span></a>
+  <a href="http://127.0.0.1:5500/item.html" class="footer-menu">🛒<span>商品一覧</span></a>
+  <a href="http://127.0.0.1:5500/contact.html" class="footer-menu">📞<span>お問い合わせ</span></a>
+</nav></div>
+
+  <script src="./Meirin_files/jquery-3.7.1.min.js.ダウンロード"></script>
+  <script src="./Meirin_files/main.js.ダウンロード"></script>
+  <script src="./Meirin_files/service.js.ダウンロード"></script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+</body></html>
