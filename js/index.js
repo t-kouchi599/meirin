@@ -1,7 +1,10 @@
 $(window).on("load", function() {
+  $(".brand-left").addClass("animate");
+  $(".brand-right").addClass("animate");
+
   setTimeout(function() {
     $("#loading").fadeOut(2000);
-  }, 2000); // 1秒待ってから開始
+  }, 2300);
 });
 
 

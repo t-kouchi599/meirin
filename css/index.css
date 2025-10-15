@@ -55,36 +55,42 @@ body { margin: 0; }
   height: auto;
 }
 
-.brand-left {
-  position: relative;
+.brand-left,
+.brand-right {
+  opacity: 0; /* 最初は非表示 */
+}
+
+.brand-left.animate {
   animation: slideInLeft 1s ease-out forwards;
 }
 
-.brand-right {
-  position: relative;
+.brand-right.animate {
+  opacity: 1;
   animation: slideInRight 1s ease-out forwards;
   animation-delay: 1s;
   animation-fill-mode: backwards;
 }
 
+/* 左からスライドイン */
 @keyframes slideInLeft {
   from {
-    transform: translateX(-100%); /* 画面外（左）から */
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
-    transform: translateX(0);     /* 元の位置へ */
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
+/* 右からスライドイン */
 @keyframes slideInRight {
   from {
-    transform: translateX(100%);  /* 右の画面外から */
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
-    transform: translateX(0);     /* 元の位置へ */
+    transform: translateX(0);
     opacity: 1;
   }
 }
