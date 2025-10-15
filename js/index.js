@@ -1,7 +1,7 @@
 $(window).on("load", function() {
   setTimeout(function() {
-    $("#loading").fadeOut(1500); // 3秒かけて消える
-  }, 1500); // 1秒待ってから開始
+    $("#loading").fadeOut(2000);
+  }, 2000); // 1秒待ってから開始
 });
 
 

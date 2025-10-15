@@ -55,6 +55,40 @@ body { margin: 0; }
   height: auto;
 }
 
+.brand-left {
+  position: relative;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.brand-right {
+  position: relative;
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%); /* 画面外（左）から */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);     /* 元の位置へ */
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);  /* 右の画面外から */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);     /* 元の位置へ */
+    opacity: 1;
+  }
+}
+
 .brand-and {
   color: black;
   font-family: "Playfair Display", serif;
