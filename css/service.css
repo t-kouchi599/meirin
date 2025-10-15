@@ -50,3 +50,11 @@
     transform: translateY(-5px);
   }
 }
+
+/* タブレット用レイアウト */
+@media (min-width: 600px) {
+  .service-modal {
+    background: url("../images/stars-night-big.jpg") no-repeat center center;
+    background-size: 100% 100%;
+  }
+}
