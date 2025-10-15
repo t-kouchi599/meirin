@@ -21,8 +21,8 @@ body { margin: 0; }
 
 /* 下に文字を表示 */
 .loading-text {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 40px;
+  font-size: 30px;
   font-weight: bold;
   color: #333; /* 好みで調整 */
   font-family: "Noto Serif JP", serif;
