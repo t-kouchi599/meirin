@@ -163,6 +163,53 @@ body { margin: 0; }
     to {opacity: 1;}
 }
 
+.now-box {
+  width: 100%;                /* 横幅いっぱい */
+  background: #f0f0f0;        /* 薄めのグレー */
+  padding: 30px 0;            /* 上下に余白 */  justify-content: center;    /* 中央寄せ */
+  align-items: center;
+}
+
+.date-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Courier New", monospace; /* デジタル感 */
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: 5px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+/* 回転中っぽい効果 */
+.date-slot span.spin {
+  filter: blur(2px);
+  opacity: 0.7;
+  color: #888;
+  transition: all 0.1s;
+}
+
+/* 最終確定で強調 */
+.date-slot span.final {
+  color: #0a7d2f;
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.time-box {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  color: #222;
+  letter-spacing: 8px;
+  opacity: 0.9;
+  text-align: center;
+}
+
 
 /* 以下、ローディングアニメーション */
 @-moz-keyframes dots-loader {

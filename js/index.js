@@ -22,6 +22,60 @@ $(window).on("load", function() {
 });
 
 $(function () {
+  slideshow();
+
+  // 最初に一回実行
+  updateClock();
+
+  // 1秒ごとに更新
+  setInterval(updateClock, 1000);
+});
+
+function updateClock() {
+  const now = new Date();
+  let h = String(now.getHours()).padStart(2, "0");
+  let m = String(now.getMinutes()).padStart(2, "0");
+  let s = String(now.getSeconds()).padStart(2, "0");
+  $("#time-box").text(`${h}:${m}:${s}`);
+}
+
+const target = document.querySelector(".date-slot");
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      slot(); // 画面に入ったら発火
+      obs.unobserve(entry.target); // 監視解除 → 1回だけ動く
+    }
+  });
+});
+observer.observe(target);
+
+function slot () {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+
+  function slotAnimation($target, finalValue, delay, maxValue) {
+    let counter = 0;
+    let interval = setInterval(function() {
+      counter++;
+      $target.text(Math.floor(Math.random() * maxValue) + 1);
+    }, 50);
+
+    setTimeout(function() {
+      clearInterval(interval);
+      $target.text(finalValue);
+    }, delay);
+  }
+
+  // 年 → 月 → 日 の順に止まる
+  slotAnimation($("#year-slot"), year, 2000, 9999);
+  slotAnimation($("#month-slot"), month, 3000, 12);
+  slotAnimation($("#day-slot"), day, 4000, 31);
+}
+
+function slideshow () {
   let index = 0;
   const $images = $(".slideshow img");
 
@@ -38,4 +92,4 @@ $(function () {
     // 次の画像に active を付ける（アニメーション開始）
     $images.eq(index).addClass("active");
   }, 5000);
-});
+}
