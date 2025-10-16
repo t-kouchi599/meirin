@@ -10,26 +10,42 @@ $(window).on("load", function() {
     $(".brand-left").addClass("animate");
     $(".brand-right").addClass("animate");
 
-    setTimeout(function() {
+    setTimeout(function () {
       $("#loading").fadeOut(2000);
     }, 2300);
 
+    setTimeout(function () {
+      slideshowShow();
+    }, 4000);
+
     // フラグを保存（同じタブ内の再読み込みではスキップされる）
     sessionStorage.setItem("firstLoadDone", "true");
+
   } else {
     $("#loading").hide();
+
+    setTimeout(function() {
+      slideshowShow();
+    }, 1000);
   }
+
+  slideshow();
+
 });
 
 $(function () {
-  slideshow();
-
   // 最初に一回実行
   updateClock();
 
   // 1秒ごとに更新
   setInterval(updateClock, 1000);
 });
+
+function slideshowShow() {
+  $(".slideshow")
+    .css("visibility", "visible")
+    .css("animation", "floatUp 3s ease-out forwards");
+}
 
 function updateClock() {
   const now = new Date();

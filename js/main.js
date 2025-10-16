@@ -76,5 +76,43 @@ $(function() {
       $(this).text("♪");
     }
   });
+
+  const $bg = $("#polka-bg");
+
+  // カラーパレット
+  const colors = ["#FF7A7A", "#FFCA3A", "#8AC926", "#1982C4", "#6A4C93", "#FFD6A5", "#A0C4FF"];
+
+  // ドット数を決める
+  const count = 120;
+
+  for (let i = 0; i < count; i++) {
+    const size = rand(10, 40);
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const color = colors[i % colors.length];
+    const dur = rand(5, 12) + "s";
+    const delay = (-Math.random() * 5) + "s";
+    const amp = rand(20, 60) + "px";   // 縦の振幅
+    const jx = rand(-30, 30) + "px";   // 横のブレ
+    const scale = (rand(80, 120) / 100).toFixed(2);
+
+    const $dot = $("<span/>", { class: "polka-dot" }).css({
+      "--size": size + "px",
+      "--color": color,
+      "--dur": dur,
+      "--delay": delay,
+      "--amp": amp,
+      "--jx": jx,
+      "--scale": scale,
+      left: x + "%",
+      top: y + "%"
+    });
+
+    $bg.append($dot);
+  }
+
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 });
 
