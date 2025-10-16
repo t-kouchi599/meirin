@@ -44,6 +44,12 @@ const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       slot(); // 画面に入ったら発火
+
+      // 全部止まったあとに時計をスライド表示
+      setTimeout(function() {
+        $("#time-box").addClass("show");
+      }, 4200); // 日付スロットが終わった直後くらい
+
       obs.unobserve(entry.target); // 監視解除 → 1回だけ動く
     }
   });
