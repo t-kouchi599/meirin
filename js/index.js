@@ -1,11 +1,12 @@
 $(window).on("load", function() {
-  $("#loading").hide();
-
   // sessionStorageで初回判定
   if (!sessionStorage.getItem("firstLoadDone")) {
-    $("#loading").show();
-
     // 初回だけアニメーション実行
+    $(".brand-and")
+      .fadeIn(2000) // 2秒かけてフェードイン
+      .css({ opacity: 0 }) // 最初は透明
+      .animate({ opacity: 1 }, 2000); // さらに3秒かけてじんわり濃くする
+
     $(".brand-left").addClass("animate");
     $(".brand-right").addClass("animate");
 
@@ -15,6 +16,8 @@ $(window).on("load", function() {
 
     // フラグを保存（同じタブ内の再読み込みではスキップされる）
     sessionStorage.setItem("firstLoadDone", "true");
+  } else {
+    $("#loading").hide();
   }
 });
 

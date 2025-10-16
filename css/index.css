@@ -96,6 +96,7 @@ body { margin: 0; }
 }
 
 .brand-and {
+  display:none;
   color: black;
   font-family: "Playfair Display", serif;
   font-size: 30px;
