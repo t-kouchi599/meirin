@@ -1,6 +1,10 @@
 $(window).on("load", function() {
+  $("#loading").hide();
+
   // sessionStorageで初回判定
   if (!sessionStorage.getItem("firstLoadDone")) {
+    $("#loading").show();
+
     // 初回だけアニメーション実行
     $(".brand-left").addClass("animate");
     $(".brand-right").addClass("animate");
@@ -11,9 +15,6 @@ $(window).on("load", function() {
 
     // フラグを保存（同じタブ内の再読み込みではスキップされる）
     sessionStorage.setItem("firstLoadDone", "true");
-  } else {
-    // 2回目以降はすぐ非表示
-    $("#loading").hide();
   }
 });
 
