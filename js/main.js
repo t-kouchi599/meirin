@@ -63,39 +63,18 @@ $(function() {
     setGridColumns();
   });
 
+  // 音楽再生
+  const bgm = $("#bgm")[0];
 
-  $("#bgm, #music-play-btn").remove();
-  // // 音楽再生
-  // const bgm = $("#bgm")[0];
-
-  // // 前回の再生秒数を復元
-  // const savedTime = sessionStorage.getItem("bgmTime");
-  // if (savedTime) {
-  //   bgm.currentTime = parseFloat(savedTime);
-  // }
-
-  // // 再生状態を復元
-  // if (sessionStorage.getItem("bgmPlaying") === "true") {
-  //   bgm.play();
-  //   $("#music-play-btn").text("■");
-  // }
-
-  // // 再生/停止ボタン
-  // $("#music-play-btn").on("click", function() {
-  //   if (bgm.paused) {
-  //     bgm.play();
-  //     $(this).text("■");
-  //     sessionStorage.setItem("bgmPlaying", "true");
-  //   } else {
-  //     bgm.pause();
-  //     $(this).text("♪");
-  //     sessionStorage.setItem("bgmPlaying", "false");
-  //   }
-  // });
-
-  // // 定期的に現在の再生秒数を保存
-  // bgm.addEventListener("timeupdate", function() {
-  //   sessionStorage.setItem("bgmTime", bgm.currentTime);
-  // });
+  // 再生/停止ボタン
+  $("#music-play-btn").on("click", function() {
+    if (bgm.paused) {
+      bgm.play();
+      $(this).text("■");
+    } else {
+      bgm.pause();
+      $(this).text("♪");
+    }
+  });
 });
 
