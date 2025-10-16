@@ -11,12 +11,12 @@ $(window).on("load", function() {
     $(".brand-right").addClass("animate");
 
     setTimeout(function () {
-      $("#loading").fadeOut(2000);
+      $("#loading").fadeOut(2000, function () {
+        setTimeout(function() {
+          slideshowShow();
+        }, 500);
+      });
     }, 2300);
-
-    setTimeout(function () {
-      slideshowShow();
-    }, 4000);
 
     // フラグを保存（同じタブ内の再読み込みではスキップされる）
     sessionStorage.setItem("firstLoadDone", "true");
