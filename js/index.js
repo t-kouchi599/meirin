@@ -48,10 +48,18 @@ $(function () {
 });
 
 function repeatAnimation() {
-  $(".brand-left, .brand-right").removeClass("animate");
-  
+  // 初期化（.cm-box の中だけ対象）
+  $(".cm-box .brand-left, .cm-box .brand-right").removeClass("animate");
+  $(".cm-box .brand-and").css({ opacity: 0 });
+
+  // 再実行
   setTimeout(function() {
-    $(".brand-left, .brand-right").addClass("animate");
+    $(".cm-box .brand-and")
+      .fadeIn(2000)                  // 2秒かけてフェードイン
+      .css({ opacity: 0 })           // 最初は透明
+      .animate({ opacity: 1 }, 2000); // さらに2秒かけてじんわり濃くする
+
+    $(".cm-box .brand-left, .cm-box .brand-right").addClass("animate");
   }, 100); // 少し間を空けて再付与
 }
 
