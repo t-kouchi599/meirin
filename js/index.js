@@ -39,7 +39,21 @@ $(function () {
 
   // 1秒ごとに更新
   setInterval(updateClock, 1000);
+
+  // 初回実行
+  repeatAnimation();
+
+  // 繰り返し
+  setInterval(repeatAnimation, 5000);
 });
+
+function repeatAnimation() {
+  $(".brand-left, .brand-right").removeClass("animate");
+  
+  setTimeout(function() {
+    $(".brand-left, .brand-right").addClass("animate");
+  }, 100); // 少し間を空けて再付与
+}
 
 function slideshowShow() {
   $(".slideshow")
