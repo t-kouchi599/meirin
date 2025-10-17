@@ -352,6 +352,7 @@ img {
   height: 650px; /* 好きな高さに調整 */
   overflow: hidden;
   visibility: hidden;
+  background: white;
 }
 
 @keyframes floatUp {
